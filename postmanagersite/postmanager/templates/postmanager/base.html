@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Post Manager</title>
+  <link rel="icon" type="image/png" href="{% static 'favicon.png' %}">
+    <!-- Bootstrap -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+  <header>
+    <h1>Post Manager</h1>
+    {% if user.is_authenticated %}
+    <div class="header-message">
+    You are signed in as <strong>{{ user.first_name }} {{ user.last_name }} | </strong> <a href="{% url 'logout' %}">Logout</a>
+    </div>
+    {% endif %}
+    <hr>
+  </header>
+  <main>
+    {% for message in messages %}
+    <p style="color: {% if message.tags == 'success' %}green{% elif message.tags == 'error' %}red{% endif %}">
+      {{ message }}
+    </p>
+    {% endfor %}
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+</html>

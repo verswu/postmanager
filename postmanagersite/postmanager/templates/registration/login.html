@@ -1,0 +1,7 @@
+{% extends 'postmanager/base.html' %}
+
+{% block content %}
+    <form action="{% url 'social:begin' 'facebook' %}?next=/someurl/">
+        <button button class="btn btn-primary" type="submit" value="Login with Facebook">Login with Facebook</button>
+    </form>
+{% endblock %}

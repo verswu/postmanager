@@ -1,0 +1,14 @@
+{% extends 'postmanager/base.html' %}
+
+{% block content %}
+  <h3>Choose a Facebook Page to Manage:</h3>
+    <ul class="list-group">
+        {% for account in accounts %}
+            <li class="list-group-item">
+                <a href="{% url 'manage' %}?id={{ account.id }}"><h3>{{ account.name }}</h3></a>
+                <p>Category: {{ account.category }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

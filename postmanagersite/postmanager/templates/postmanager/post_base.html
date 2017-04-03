@@ -1,0 +1,35 @@
+{% extends 'postmanager/manage_base.html' %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Create Post
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="{% url 'create_link_post' %}">Link</a></li>
+        <li><a href="{% url 'create_photo_post' %}">Photo</a></li>
+        <li><a href="{% url 'create_video_post' %}">Video</a></li>
+        <li><a href="{% url 'create_status_post' %}">Status</a></li>
+    </ul>
+</div>
+<br/>
+<table class="post-table">
+    <tr class="content-header-row">
+        <th>Post</th>
+        <th>ID</td>
+        <th>Views</th>
+        <th>Date Updated</th>
+    </tr>
+        {% for post in posts %}
+        <tr class="content-post-row">
+            <td>{{ post.message }} {{ post.story }}</td>
+            <td><a href="https://www.facebook.com/{{ post.post_id }}">{{ post.post_id }}</td>
+            <td>{{ post.view_count }}</td>
+            <td>{{ post.created_time }}</td>
+        </tr>
+        {%  endfor %}
+</table>
+{% endblock %}
+
+{% block nav %}{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'postmanager/manage_base.html' %}
+
+{% block content %}
+    <h2>Create {{ post_type }} Post</h2>
+    {% if post_type == 'Status' %}
+        <form action="{% url 'create_status_post' %}" method="POST">
+            {% csrf_token %}
+            <table class="post-form-table">
+                {{form.as_table}}
+            </table>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    {% endif %}
+    {% if post_type == 'Link' %}
+        <form action="{% url 'create_link_post' %}" method="POST">
+            {% csrf_token %}
+            <table class="post-form-table">
+                {{form.as_table}}
+            </table>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    {% endif %}
+    {% if post_type == 'Photo' %}
+        <form action="{% url 'create_photo_post' %}" method="POST">
+            {% csrf_token %}
+            <table class="post-form-table">
+                {{form.as_table}}
+            </table>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    {% endif %}
+    {% if post_type == 'Video' %}
+        <form action="{% url 'create_video_post' %}" method="POST">
+            {% csrf_token %}
+            <table class="post-form-table">
+                {{form.as_table}}
+            </table>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    {% endif %}
+{% endblock %}

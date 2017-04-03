@@ -1,0 +1,47 @@
+body {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.content-post-row:nth-child(odd) {background-color: #f2f2f2}
+
+.content-header-row {
+    background-color: #3B5998;
+    color: white;
+}
+
+.list-group {
+    max-width: 600px;
+    width: 100%;
+ }
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+.post-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.btn,
+button {
+    background: #3B5998;
+    color: #ffffff;
+}
+
+button,
+.btn:hover, .btn:focus, .btn:active, .btn.active, .open > .dropdown-toggle.btn {
+    background:  #0e1f56;
+}
+
+.post-header {
+    display: inline-block;
+}

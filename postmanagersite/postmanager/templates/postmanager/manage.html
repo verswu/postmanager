@@ -1,0 +1,19 @@
+{% extends 'postmanager/manage_base.html' %}
+
+{% block content %}
+<h3>Page Management for {{ name }}</h3>
+<br>
+<h4>Manage Page Posts</h4>
+<ul class="list-group">
+  <li class="list-group-item"><a href="{% url 'manage_published_posts' %}">Manage Published Posts</a></li>
+  <li class="list-group-item"><a href="{% url 'manage_unpublished_posts' %}">Manage Unpublished Posts</a></li>
+</ul>
+
+<h4>Create New Post</h4>
+<ul class="list-group">
+  <li class="list-group-item"><a href="{% url 'create_link_post' %}">Create Link Post</a></li>
+  <li class="list-group-item"><a href="{% url 'create_status_post' %}">Create Status Post</a></li>
+  <li class="list-group-item"><a href="{% url 'create_photo_post' %}">Create Photo Post</a></li>
+  <li class="list-group-item"><a href="{% url 'create_video_post' %}">Create Video Post</a></li>
+</ul>
+{% endblock %}
